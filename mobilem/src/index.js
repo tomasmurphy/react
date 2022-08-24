@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import './estilos/css/main.css'
+import './estilos/scss/main.css'
 
 import App from './App';
 

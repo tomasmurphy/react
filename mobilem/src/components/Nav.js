@@ -1,9 +1,15 @@
+import logo from '../img/logo.png';
+import {CardWidget} from './CardWidget';
+
 function Nav() {
     return (
 <nav id="menu" className="ms-md-2 mx-auto sombra wow animate__animated animate__fadeInUpBig animate__delay-2s animate__slower fixed-top cajaNav navbar-dark navbar navbar-expand-md">
       <div className="burgerTop container-fluid mt-3 mt-md-0">
         <div className="bloqueLogo" id="1">
-          <a className="sombra navbar-brand mx-auto" href="#menu">Mobilem</a>
+          <a className="sombra navbar-brand mx-auto" href="#menu">
+            <img src={logo} alt="logo de mobilem" className="img-fluid" />
+          </a>
+          
           </div>
         <button
           id="button"
@@ -19,7 +25,9 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item"><a className="nav-link" href="#menu"> <CardWidget/></a></li>
         <li className="nav-item dropdown">
+          
           <a className="nav-link dropdown-toggle" href="#menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
           </a>
@@ -35,6 +43,7 @@ function Nav() {
         <li className="nav-item">
           <a className="nav-link" href="#menu">Contacto</a>
         </li>
+        
       </ul>         
        </div>
         </div>

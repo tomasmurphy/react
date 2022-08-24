@@ -13,15 +13,16 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build-css": "node-sass --include-path scss src/estilos/scss/main.scss src/estilos/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "purgatorio": "purgecss --css css/main.css --content **/*.html -o css/reducido.css"
-  },
-  "eslintConfig": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src//estilos/scss/ -o src//estilos/scss/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/estilos/scss/ -o src/estilos/scss/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },  
+"eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
@@ -40,6 +41,8 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "node-sass-chokidar": "^2.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }

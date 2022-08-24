@@ -8373,7 +8373,11 @@ textarea.form-control-lg {
 
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: black; }
+
+h1, .h1 {
+  color: #b36812; }
 
 /* NAVEGACION */
 .navbar-expand-md .navbar-collapse {
@@ -8396,6 +8400,8 @@ textarea.form-control-lg {
   flex-direction: row;
   margin: auto;
   padding-left: 56px; }
+  .bloqueLogo img {
+    width: 5%; }
   .bloqueLogo h1, .bloqueLogo .h1 {
     margin-top: .5rem;
     font-size: 1.25rem;
